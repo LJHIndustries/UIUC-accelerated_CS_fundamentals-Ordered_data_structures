@@ -1,0 +1,74 @@
+1.
+
+   4
+     6
+    5  7
+         8
+longest leaf length is 3, from 4-6, 6-7, 7-8
+
+2.
+                     3(2)
+      1(0-1+(-0)=-1)     4(0-1+(-2)=-3)
+           2(0)             6(0-(-1)+(--2)=2)
+                       5(0)    7(0-1=-1)
+                                   8(0)
+balance factor = height of left subtree - height of right subtree
+start at bottom with 0, and then work upwards
+                  
+3.
+                                             4(1-1+(-2)=-2)
+                             3(1-0+(--1)=2)                    5(0)
+               1(0-1+(-0)=-1)  
+                      2(0)
+node 3 is the one with the balance factor of 2 or greater
+
+4. to make binary tree into avl tree, we do rotation:
+                      balance factor of the lowest point of imbalance               balance factor of the node in the direction of imbalance
+left rotation         2		                                                    1
+right rotation        -2                                                            -1
+left right rotation   2                                                             -1
+right left rotation   -2                                                             1
+balanced BST are height balanced trees that ensure nearly half of the data is located in each sub-tree
+mountain, stick
+deepest node of of balance
+make stick into mountain
+
+generic left rotation:
+b                c
+ c              b  d
+  d
+rotations essentially turn an imbalanced tree into a balanced tree, while preserving the order.
+
+out of balance means balance foctor of >|1|
+
+generic right left rotation:
+b     b       d 
+  c    d     b c
+ d      c
+this enables following data to be inserted while preserving the balance, hence bst tree -> avl tree
+
+for 3, do a generic left right rotation starting at node3:
+that means left rotate at the bottom 2 nodes, right rotate at the top 2 nodes
+   3      3      2
+ 1       2      1  3
+  2     1
+is this right?
+this gives:
+     4
+   2   5
+  1 3
+yeah it's right
+
+this method can be used for organization of groups of people.
+
+avl insert:
+1. insert at proper place
+2. check for imbalance
+3. rotate of necessary
+4. update height
+
+8. b tree vs avl tree:
+https://www.geeksforgeeks.org/difference-between-binary-search-tree-and-avl-tree/
+
+
+
